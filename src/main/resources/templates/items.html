@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Items</title>
+</head>
+<body>
+  <table>
+    <tr>
+      <th>Item Id:</th>
+      <th>Item Name:</th>
+      <th>Item Description:</th>
+      <th>Item Price:</th>
+      <th>Item Weight:</th>
+      <th>Item Brand:</th>
+    </tr>
+    <tr th:each="item : ${items}">
+      <td th:text="${item.id}"></td>
+      <td th:text="${item.name}"></td>
+      <td th:text="${item.description}"></td>
+      <td th:text="${item.price}"></td>
+      <td th:text="${item.weight}"></td>
+      <td th:text="${item.brand}"></td>
+      <td th:text="${item.category}"></td>
+    </tr>
+    <tr>
+            <td><a th:href="@{/addItem}">Add</a></td>
+            <td><a th:href="@{/updateItem}">Update</a></td>
+            <td><a th:href="@{/deleteItem}">Delete</a></td>
+<!--            <td><a th:href="@{/edit/{id}(id=${item.id})}">Edit</a></td>-->
+    </tr>
+<!--    <tr>-->
+<!--      <td><a th:href="@{/delete/{id}(id=${item.uid})}">Delete</a></td>-->
+<!--    </tr>-->
+  </table>
+</body>
+</html>
